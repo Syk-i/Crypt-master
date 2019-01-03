@@ -33,12 +33,14 @@ public class KnockBack : MonoBehaviour {
     {
         if (enemy != null)
         {
-            Debug.Log("Hit");
-            damage += 1;
-            Debug.Log(damage);
+            
+            
+
+            // Debug.Log(damage);
             yield return new WaitForSeconds(knockTime);
             enemy.velocity = Vector2.zero;
             enemy.isKinematic = true;
         }
+       
     }
 }

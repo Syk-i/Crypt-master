@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : KnockBack {
-    public int health;
-    public string enemyString;
-    public int baseattack;
-    public float moveSpeed;
-    
+public class PlayerHealthManager : MonoBehaviour {
+    public int PlayerMaxHealth;
+    public int playerCurrentHealth;
 	// Use this for initialization
 	void Start () {
-	
+        playerCurrentHealth = PlayerMaxHealth;
+		
 	}
 	
 	// Update is called once per frame

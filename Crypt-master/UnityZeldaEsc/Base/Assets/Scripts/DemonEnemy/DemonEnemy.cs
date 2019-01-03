@@ -9,16 +9,23 @@ public class DemonEnemy : Enemy {
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
-	// Use this for initialization
-	void Start () {
+    public int DemonDamage;
+    KnockBack combat;
+    int cat;
+    
+    // Use this for initialization
+   
+    void Start () {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        combat = GetComponent<KnockBack>();
+
+    }
+   
+    // Update is called once per frame
+    void Update () {
         CheckDistance();
-		
+        
+        
 	}
     void CheckDistance()
     {
@@ -26,5 +33,13 @@ public class DemonEnemy : Enemy {
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.name == "Player")
+        {
+            Debug.Log("Hello");
+        }
+        
     }
 }
