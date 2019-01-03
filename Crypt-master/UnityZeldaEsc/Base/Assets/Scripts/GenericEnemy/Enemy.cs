@@ -15,6 +15,17 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+       
 		
 	}
+    public void HurtEnemy(int thrust)
+    {
+        health -= thrust;
+        Debug.Log(health);
+        if (health <= 0)
+        {
+            Debug.Log("Dead");
+            gameObject.SetActive(false);
+        }
+    }
 }

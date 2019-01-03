@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KnockBack : MonoBehaviour {
-    public float thrust;
+    public int thrust;
     public float knockTime;
     public int damage;
     
@@ -21,6 +21,8 @@ public class KnockBack : MonoBehaviour {
                 enemy.isKinematic = false;
                 Vector2 difference = enemy.transform.position - transform.position;
 
+                other.gameObject.GetComponent<Enemy>().HurtEnemy(thrust);
+
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
                 StartCoroutine(KnockCo(enemy));
@@ -33,6 +35,7 @@ public class KnockBack : MonoBehaviour {
     {
         if (enemy != null)
         {
+            
             
             
 
