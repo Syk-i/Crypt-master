@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtPlayer : Enemy {
+public class HurtPlayer : MonoBehaviour {
     public int damageToGive;
 
 	// Use this for initialization
@@ -20,8 +20,10 @@ public class HurtPlayer : Enemy {
         {
             
             other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
-           
+
+            
         }
 
     }
+
 }

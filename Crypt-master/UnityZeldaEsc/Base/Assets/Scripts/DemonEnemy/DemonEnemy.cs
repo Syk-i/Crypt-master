@@ -9,15 +9,15 @@ public class DemonEnemy : Enemy {
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
-    public int DemonDamage;
-    KnockBack combat;
-    int cat;
+    
+    
+    
     
     // Use this for initialization
    
     void Start () {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        combat = GetComponent<KnockBack>();
+        
 
     }
    
