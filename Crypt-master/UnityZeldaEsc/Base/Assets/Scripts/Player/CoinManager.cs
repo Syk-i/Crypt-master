@@ -5,31 +5,22 @@ using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
-    public int PlayerCurrentCoins;
+    public Text score;
+    private int scoreValue = 0;
 
-     void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //PlayerCurrentCoins;
+        if(collision.gameObject.tag == "Coin")
+        {
+            collision.gameObject.SetActive(false);
+            scoreValue += 1;
+            SetScore();
+        }
     }
-
-     void Update()
+    void SetScore()
     {
-
-        
+        score.text = scoreValue.ToString();
     }
-    public void StashCoins(int CoinsToAdd)
-    {
-        PlayerCurrentCoins += CoinsToAdd;
-        Debug.Log(CoinsToAdd);
-        
-    }
-
-    public void ResetCoin()
-    {
-        PlayerCurrentCoins = 0;
-    }
-
-
 
 
 
