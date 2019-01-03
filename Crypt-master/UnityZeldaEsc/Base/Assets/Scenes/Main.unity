@@ -440,6 +440,7 @@ MonoBehaviour:
   - {fileID: 1083452295}
   fullHeart: {fileID: 21300006, guid: 570497032f5f11d41abdd2088c7401be, type: 3}
   emptyHeart: {fileID: 21300014, guid: 570497032f5f11d41abdd2088c7401be, type: 3}
+  PlayerHealth: 0
 --- !u!114 &309598053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1180,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1270524634}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

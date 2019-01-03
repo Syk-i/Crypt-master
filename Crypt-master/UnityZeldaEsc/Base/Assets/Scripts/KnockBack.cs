@@ -5,11 +5,14 @@ using UnityEngine;
 public class KnockBack : MonoBehaviour {
     public float thrust;
     public float knockTime;
+    public int damage;
+    
 	// Use this for initialization
 	
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
@@ -30,6 +33,9 @@ public class KnockBack : MonoBehaviour {
     {
         if (enemy != null)
         {
+            Debug.Log("Hit");
+            damage += 1;
+            Debug.Log(damage);
             yield return new WaitForSeconds(knockTime);
             enemy.velocity = Vector2.zero;
             enemy.isKinematic = true;

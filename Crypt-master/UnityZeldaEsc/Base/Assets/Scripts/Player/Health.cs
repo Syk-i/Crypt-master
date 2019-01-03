@@ -11,7 +11,10 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public int PlayerHealth;
 
+
+   
 
     void Update()
     {
