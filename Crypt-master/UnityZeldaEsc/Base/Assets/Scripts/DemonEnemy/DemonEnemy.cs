@@ -39,6 +39,7 @@ public class DemonEnemy : Enemy {
         if(other.gameObject.name == "Player")
         {
             Debug.Log("Hello");
+
         }
         
     }

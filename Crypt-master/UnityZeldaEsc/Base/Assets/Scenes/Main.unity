@@ -271,13 +271,13 @@ GameObject:
   - component: {fileID: 309598047}
   - component: {fileID: 309598046}
   - component: {fileID: 309598048}
-  - component: {fileID: 309598050}
   - component: {fileID: 309598053}
   - component: {fileID: 309598049}
   - component: {fileID: 309598051}
   - component: {fileID: 309598052}
   - component: {fileID: 309598055}
   - component: {fileID: 309598054}
+  - component: {fileID: 309598050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -388,10 +388,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008846283, y: -0.5175041}
+  m_Offset: {x: -0.016390324, y: -0.1903888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -402,7 +402,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53999627, y: 0.22190928}
+  m_Size: {x: 0.6476698, y: 0.92923903}
   m_EdgeRadius: 0
 --- !u!95 &309598051
 Animator:
@@ -466,10 +466,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0017404556, y: -0.53123665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -480,7 +480,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.40986443, y: 0.19420767}
   m_EdgeRadius: 0
 --- !u!114 &309598055
 MonoBehaviour:
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4137de8eaeb274191a91c50d7b7e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMaxHealth: 10
-  playerCurrentHealth: 10
+  PlayerMaxHealth: 50
+  playerCurrentHealth: 50
 --- !u!1 &345747135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1107,10 @@ GameObject:
   - component: {fileID: 1270524635}
   - component: {fileID: 1270524639}
   - component: {fileID: 1270524638}
+  - component: {fileID: 1270524642}
   - component: {fileID: 1270524640}
+  - component: {fileID: 1270524643}
+  - component: {fileID: 1270524641}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -1242,21 +1245,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 1270524634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661fea769dff7474eb15eaf1667aa054, type: 3}
+  m_Script: {fileID: 11500000, guid: 34410bd340f8a3c48aece5ddbfdabe4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+--- !u!114 &1270524641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270524634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ea8f0982f480b4483d126f393ba1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  enemyString: 
+  baseattack: 0
+  moveSpeed: 0
+  damageToGive: 10
+--- !u!61 &1270524642
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270524634}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.125}
+    newSize: {x: 1, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.125}
+  m_EdgeRadius: 0
+--- !u!114 &1270524643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270524634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1425d2f9fe4e05f4bb7bb04fb57efb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 0
   knockTime: 0
   damage: 0
-  health: 2
-  enemyString: Harry
-  baseattack: 1
-  moveSpeed: 1.5
-  target: {fileID: 309598047}
-  chaseRadius: 4
-  attackRadius: 0.75
-  homePosition: {fileID: 0}
-  DemonDamage: 0
 --- !u!1 &1365579396
 GameObject:
   m_ObjectHideFlags: 0

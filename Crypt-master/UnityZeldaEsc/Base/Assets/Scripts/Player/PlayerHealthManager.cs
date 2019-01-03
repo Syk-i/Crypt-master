@@ -13,6 +13,20 @@ public class PlayerHealthManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (playerCurrentHealth < 0)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("Working");
+        }
 	}
+
+    public void HurtPlayer(int damageToGive)
+    {
+        playerCurrentHealth -= damageToGive;
+
+    }
+    public void SetMaxHealth()
+    {
+        playerCurrentHealth = PlayerMaxHealth;
+    }
 }
