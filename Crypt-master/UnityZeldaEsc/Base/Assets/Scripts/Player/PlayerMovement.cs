@@ -81,17 +81,5 @@ public class PlayerMovement : MonoBehaviour {
          change.Normalize();
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Coin"))
-        {
-            col.GetComponent<Coins>().CoinUpdate();
-
-            
-   
-            
-
-
-        }
-    }
+     
 }
